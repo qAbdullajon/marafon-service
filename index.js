@@ -19,7 +19,7 @@ const PORT = process.env.PORT;
 
 const bootstrap = async () => {
   try {
-    await mongoose.connect(process.env.DB_URL).then(() => console.log("Connected db"));
+    await mongoose.connect("mongodb+srv://db_url:VfKH6FFowLPsDQnI@backend.jxus2.mongodb.net/?retryWrites=true&w=majority&appName=Backend").then(() => console.log("Connected db"));
     app.listen(PORT, () => console.log(`Server runing http://localhost:${PORT}`));
   } catch (error) {
     console.log(`Error connecting with DB: ${error}`);
