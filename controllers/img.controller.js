@@ -2,6 +2,8 @@ const uploadService = require("../service/img.service");
 
 class FileUploadImage {
   async upload(req, res, next) {
+    const { id } = req.body;
+
     if (!req.files || Object.keys(req.files).length === 0) {
       return res.status(400).send("Fayl yuklanmadi!");
     }
@@ -10,11 +12,11 @@ class FileUploadImage {
     const file = req.files[fileKey];
 
     try {
-      // Rasmni Cloudinary'ga yuklash
-      const imageUrl = await uploadService.uploadToCloudinary(file.tempFilePath);
+      const secure_url = await uploadService.uploadToCloudinary(file.tempFilePath, id);
+
       res.status(200).json({
         message: "Fayl muvaffaqiyatli yuklandi",
-        url: imageUrl,
+        url: secure_url,
       });
     } catch (error) {
       res.status(500).json({ message: "Rasm yuklashda xatolik yuz berdi" });
