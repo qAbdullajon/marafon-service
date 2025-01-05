@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(cors({ credentials: true, origin: "https://front-marafon.netlify.app/" }));
 app.use(express.json());
 app.use(
   fileUpload({
