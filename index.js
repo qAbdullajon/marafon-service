@@ -4,16 +4,9 @@ const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: "http://localhost:5173",
-//   })
-// );
-
 const app = express();
 
-app.use(cors({ credentials: true, origin: "htts://localhost:5173" }));
+app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
 app.use(express.json());
 app.use(
   fileUpload({
