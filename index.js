@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({ credentials: true, origin: "https://rustiliregister.uz" }));
+app.use(cors({ credentials: true, origin: "https://www.rustiliregister.uz/" }));
 app.use(express.json());
 app.use(
   fileUpload({
